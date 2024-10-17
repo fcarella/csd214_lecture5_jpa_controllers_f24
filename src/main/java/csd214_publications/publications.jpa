@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<entity-mappings ptype="MONOLITH" ppkg="csd214_publications" epkg="entities" v="6.1.0" rws="_17291777926402" Pws="_17291777926402" cws="_17291777926402" persistenceUnitName="DEFAULT_PU" sm="false" xs="false" id="_17291777926381" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <entity compositePrimaryKeyClass="PublicationPK" abs="false" class="Publication" v="true" jbn="false" xre="false" m="false" rootElement="_17291777926381" id="_17291777983553">
+        <ath>fcarella</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="title" id="_172917800205218">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="double" v="true" xvt="" name="price" id="_172917800320419">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="int" v="true" xvt="" name="copies" id="_172917800466920">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="isbn10" id="_172917802678021">
+                <xwm/>
+                <xm/>
+            </basic>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_17291777984244">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="IDENTITY"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Publication.findAll">
+            <query>Select e from Publication e</query>
+        </nq>
+        <nq e="false" name="Publication.findByTitle">
+            <query>Select p from Publication p where p.title=:title</query>
+        </nq>
+        <nq e="false" name="Publication.findByPrice">
+            <query>Select p from Publication p where p.price=:price</query>
+        </nq>
+        <nq e="false" name="Publication.findByCopies">
+            <query>Select p from Publication p where p.copies=:copies</query>
+        </nq>
+        <nq e="false" name="Publication.findByIsbn10">
+            <query>Select p from Publication p where p.isbn10=:isbn10</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="BookPK" abs="false" class="Book" superclassId="_17291777983553" v="true" jbn="false" xre="false" m="false" rootElement="_17291777926381" id="_17291778006406">
+        <ath>fcarella</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="author" id="_172917787689316">
+                <xwm/>
+                <xm/>
+            </basic>
+        </attributes>
+        <nq e="false" name="Book.findAll">
+            <query>Select e from Book e</query>
+        </nq>
+        <nq e="false" name="Book.findByAuthor">
+            <query>Select e from Book e where e.author=:author</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="MagazinePK" abs="false" class="Magazine" superclassId="_17291777983553" v="true" jbn="false" xre="false" m="false" rootElement="_17291777926381" id="_17291778027489">
+        <ath>fcarella</ath>
+        <attributes>
+            <basic attribute-type="int" v="true" xvt="" name="orderQty" id="_172917813234822">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="java.util.Date" v="true" xvt="" name="currIssue" id="_172917813285323">
+                <xwm/>
+                <xm/>
+                <temporal>DATE</temporal>
+            </basic>
+        </attributes>
+        <nq e="false" name="Magazine.findAll">
+            <query>Select e from Magazine e</query>
+        </nq>
+        <nq e="false" name="Magazine.findByOrderQty">
+            <query>Select e from Magazine e where e.orderQty=:orderQty</query>
+        </nq>
+        <nq e="false" name="Magazine.findByCurrIssue">
+            <query>Select e from Magazine e where e.currIssue=:currIssue</query>
+        </nq>
+    </entity>
+    <wsl>
+        <ws n="Main" id="_17291777926402">
+            <i ref="_17291778006406" x="179" y="320"/>
+            <i ref="_17291778027489" x="720" y="310"/>
+            <i ref="_17291777983553" x="477" y="86"/>
+        </ws>
+    </wsl>
+</entity-mappings>
